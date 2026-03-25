@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Odyssey — The Life of a Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)" />
+  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Fira+Code:wght@300;400;500&display=swap)" rel="stylesheet" />
+</head>
+<body class="dark-mode">
+
+  <!-- ========== PAGE LOADER ========== -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-ring"></div>
+      <div class="loader-ring loader-ring--2"></div>
+      <div class="loader-ring loader-ring--3"></div>
+      <p class="loader-text">Compiling your story<span class="dots">...</span></p>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar" id="loaderBar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav id="navbar">
+    <div class="nav-brand">
+      <span class="nav-logo">&lt;Dev/&gt;</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero">Start</a></li>
+      <li><a href="#learning">Learn</a></li>
+      <li><a href="#debugging">Debug</a></li>
+      <li><a href="#deadline">Deadline</a></li>
+      <li><a href="#success">Success</a></li>
+    </ul>
+    <div class="nav-controls">
+      <button id="moodToggle" aria-label="Toggle mood">
+        <span class="toggle-icon">☀️</span>
+        <span class="toggle-label">Light Mode</span>
+      </button>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ========== PROGRESS BAR ========== -->
+  <div id="progressBarWrap">
+    <div id="progressBar"></div>
+    <span id="progressLabel">0%</span>
+  </div>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main>
+
+    <!-- ===== SECTION 1: HERO ===== -->
+    <section id="hero" class="section section--hero">
+      <!-- Animated blobs -->
+      <div class="blob blob--1"></div>
+      <div class="blob blob--2"></div>
+      <div class="blob blob--3"></div>
+      <!-- Floating particles -->
+      <div class="particles" id="particles"></div>
+
+      <div class="hero-content">
+        <div class="hero-badge reveal-up">Chapter 1</div>
+        <h1 class="hero-title reveal-up">
+          The Life of a<br/>
+          <span class="gradient-text" id="typedTitle"></span>
+        </h1>
+        <p class="hero-sub reveal-up">
+          An interactive journey from <em>curious beginner</em> to <em>battle-hardened developer</em>.
+          Buckle up. There will be coffee. There will be tears.
+        </p>
+        <div class="hero-cta reveal-up">
+          <a href="#learning" class="btn btn--primary">Begin the Journey</a>
+          <a href="#debugging" class="btn btn--ghost">Skip to Pain</a>
+        </div>
+        <div class="hero-stats reveal-up">
+          <div class="stat">
+            <span class="stat-num" data-target="10000">0</span>
+            <span class="stat-label">Lines of code</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-target="847">0</span>
+            <span class="stat-label">Stack Overflow visits</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-target="312">0</span>
+            <span class="stat-label">Cups of coffee ☕</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating code snippet -->
+      <div class="floating-code reveal-up">
+        <div class="code-badge">main.js</div>
+        <pre><code><span class="c-kw">const</span> <span class="c-fn">dream</span> = () =&gt; {
+  <span class="c-kw">let</span> skills = [];
+  <span class="c-kw">let</span> coffee = <span class="c-num">Infinity</span>;
+
+  <span class="c-kw">while</span> (!success) {
+    skills.<span class="c-fn">push</span>(learn());
+    coffee--;
+    debug();
+  }
+
+  <span class="c-kw">return</span> <span class="c-str">'🚀 Legend'</span>;
+};</code></pre>
+      </div>
+
+      <div class="scroll-hint">
+        <span>Scroll down</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 2: LEARNING PHASE ===== -->
+    <section id="learning" class="section section--learning">
+      <div class="blob blob--4"></div>
+      <div class="blob blob--5"></div>
+
+      <div class="section-header reveal-up">
+        <div class="chapter-tag">Chapter 2</div>
+        <h2>The Learning Phase</h2>
+        <p class="section-sub">Everything is magical. Google is your best friend. Every tutorial is a revelation.</p>
+      </div>
+
+      <div class="learning-grid">
+        <!-- Terminal -->
+        <div class="terminal-card reveal-left">
+          <div class="terminal-header">
+            <span class="t-dot t-red"></span>
+            <span class="t-dot t-yellow"></span>
+            <span class="t-dot t-green"></span>
+            <span class="t-title">terminal</span>
+          </div>
+          <div class="terminal-body" id="terminalBody">
+            <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">npm install everything</span></div>
+            <div class="t-line t-out">Installing 4,729 packages...</div>
+            <div class="t-line t-out">⚠️  47 vulnerabilities found</div>
+            <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">node index.js</span></div>
+            <div class="t-line t-error">ReferenceError: success is not defined</div>
+            <div class="t-line t-out">...but I believe in you. 🙏</div>
+            <div class="t-line t-cursor"><span class="t-prompt">$</span> <span class="blink-cursor">▋</span></div>
+          </div>
+        </div>
+
+        <!-- Learning cards -->
+        <div class="cards-grid">
+          <div class="glass-card reveal-up" style="--delay:0.1s">
+            <div class="card-icon">🌐</div>
+            <h3>HTML</h3>
+            <p>Day 1: "I made a button! I'm basically a developer."</p>
+            <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+          </div>
+          <div class="glass-card reveal-up" style="--delay:0.2s">
+            <div class="card-icon">🎨</div>
+            <h3>CSS</h3>
+            <p>Day 3: Why is this div not centering?? WHY.</p>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+          <div class="glass-card reveal-up" style="--delay:0.3s">
+            <div class="card-icon">⚡</div>
+            <h3>JavaScript</h3>
+            <p>Week 2: Wait, <code>undefined is not a function</code> is my whole personality now?</p>
+            <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+          </div>
+          <div class="glass-card reveal-up" style="--delay:0.4s">
+            <div class="card-icon">⚛️</div>
+            <h3>React</h3>
+            <p>Month 1: I have no idea what a hook is, but it sounds cool.</p>
+            <div class="skill-bar"><div class="skill-fill" data-width="55"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress tracker -->
+      <div class="progress-track reveal-up">
+        <h3>Developer Level <span id="devLevelLabel">Intern</span></h3>
+        <div class="dev-progress-bar">
+          <div class="dev-progress-fill" id="devProgress" style="width:0%"></div>
+          <div class="dev-progress-glow"></div>
+        </div>
+        <div class="progress-milestones">
+          <span>Intern</span>
+          <span>Junior</span>
+          <span>Mid</span>
+          <span>Senior</span>
+          <span>Legend</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 3: DEBUGGING PHASE ===== -->
+    <section id="debugging" class="section section--debugging">
+      <div class="glitch-bg"></div>
+      <div class="scanlines"></div>
+
+      <div class="section-header reveal-up">
+        <div class="chapter-tag chapter-tag--red">Chapter 3</div>
+        <h2 class="glitch-text" data-text="The Debugging Phase">The Debugging Phase</h2>
+        <p class="section-sub">Welcome to the abyss. The code worked yesterday. It doesn't now. Nobody knows why.</p>
+      </div>
+
+      <div class="debug-arena">
+        <!-- Error console -->
+        <div class="error-console reveal-left">
+          <div class="ec-header">
+            <span class="ec-icon">⛔</span>
+            <span>Console Errors (1,337)</span>
+            <span class="ec-clear" id="clearConsole">Clear</span>
+          </div>
+          <div class="ec-body" id="errorConsole">
+            <div class="ec-row ec-error">🔴 TypeError: Cannot read property 'map' of undefined</div>
+            <div class="ec-row ec-warn">🟡 Warning: Each child should have a unique key</div>
+            <div class="ec-row ec-error">🔴 Uncaught ReferenceError: $ is not defined</div>
+            <div class="ec-row ec-warn">🟡 Warning: setState on unmounted component</div>
+            <div class="ec-row ec-error">🔴 SyntaxError: Unexpected token ')'</div>
+            <div class="ec-row ec-info">🔵 console.log("why is this not working????")</div>
+            <div class="ec-row ec-error">🔴 CORS policy: No 'Access-Control-Allow-Origin'</div>
+          </div>
+        </div>
+
+        <!-- Bug interaction panel -->
+        <div class="bug-panel reveal-right">
+          <div class="bug-card glass-card">
+            <div class="bug-icon">🐛</div>
+            <h3>Bug #4,201</h3>
+            <p class="bug-desc">The button works perfectly — but only when nobody is watching.</p>
+            <div class="bug-meta">
+              <span class="badge badge--red">Critical</span>
+              <span class="badge badge--yellow">12 days old</span>
+            </div>
+            <button class="btn btn--danger" id="fixBugBtn">
+              Fix Bug 🔧
+            </button>
+          </div>
+
+          <div class="quote-card glass-card">
+            <p class="debug-quote" id="debugQuote">
+              "It works on my machine."
+            </p>
+            <button class="btn btn--ghost btn--sm" id="newQuoteBtn">New Wisdom 🎲</button>
+          </div>
+
+          <!-- Coffee counter -->
+          <div class="coffee-card glass-card">
+            <div class="coffee-icon">☕</div>
+            <div class="coffee-info">
+              <h4>Coffee Consumed Today</h4>
+              <div class="coffee-count">
+                <span id="coffeeCount">0</span>
+                <span class="coffee-unit">cups</span>
+              </div>
+            </div>
+            <button class="btn btn--ghost btn--sm" id="addCoffeeBtn">+ Drink One</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating glitch shapes -->
+      <div class="glitch-shape gs--1"></div>
+      <div class="glitch-shape gs--2"></div>
+    </section>
+
+    <!-- ===== SECTION 4: DEADLINE PHASE ===== -->
+    <section id="deadline" class="section section--deadline">
+      <div class="pulse-bg"></div>
+
+      <div class="section-header reveal-up">
+        <div class="chapter-tag chapter-tag--orange">Chapter 4</div>
+        <h2>The Deadline Phase</h2>
+        <p class="section-sub">3 AM. Red Bull in hand. The client wants it live by 9 AM. You got this. Probably.</p>
+      </div>
+
+      <div class="deadline-arena">
+        <!-- Countdown -->
+        <div class="countdown-card glass-card reveal-up">
+          <h3>⏰ Deployment Deadline</h3>
+          <div class="countdown-display">
+            <div class="cd-unit">
+              <span class="cd-num" id="cdHours">08</span>
+              <span class="cd-label">Hours</span>
+            </div>
+            <span class="cd-sep">:</span>
+            <div class="cd-unit">
+              <span class="cd-num" id="cdMins">47</span>
+              <span class="cd-label">Minutes</span>
+            </div>
+            <span class="cd-sep">:</span>
+            <div class="cd-unit">
+              <span class="cd-num" id="cdSecs">00</span>
+              <span class="cd-label">Seconds</span>
+            </div>
+          </div>
+          <div class="panic-meter">
+            <span>Panic Level:</span>
+            <div class="panic-bar"><div class="panic-fill" id="panicFill"></div></div>
+            <span id="panicLabel">🙂 Calm</span>
+          </div>
+        </div>
+
+        <!-- Checklist -->
+        <div class="checklist-card glass-card reveal-right">
+          <h3>📋 Pre-Launch Checklist</h3>
+          <ul class="checklist" id="checklist">
+            <li class="check-item done"><span class="check-box">✅</span> Write one line of code</li>
+            <li class="check-item done"><span class="check-box">✅</span> Google the rest</li>
+            <li class="check-item done"><span class="check-box">✅</span> Copy from Stack Overflow</li>
+            <li class="check-item"><span class="check-box">⬜</span> Test on mobile</li>
+            <li class="check-item"><span class="check-box">⬜</span> Write documentation</li>
+            <li class="check-item"><span class="check-box">⬜</span> Sleep</li>
+          </ul>
+          <button class="btn btn--ghost btn--sm" id="checkItem">Complete Next Task ✓</button>
+        </div>
+      </div>
+
+      <!-- Animated pulsing alerts -->
+      <div class="alert-strip reveal-up">
+        <div class="alert-ticker">
+         <span class="text-red-400">⚡ Git push — rejected: non-fast-forward</span>
+
+    <span class="text-orange-400">🔥 Production is down</span>
+
+    <span class="text-yellow-300">📧 Client: "Just a small change"</span>
+
+    <span class="text-pink-400">💀 Merge conflict detected</span>
+
+    <span class="text-red-400">⚡ Git push — rejected: non-fast-forward</span>
+
+    <span class="text-orange-400">🔥 Production is down</span>
+
+    <span class="text-yellow-300">📧 Client: "Just a small change"</span>
+
+    <span class="text-pink-400">💀 Merge conflict detected</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 5: SUCCESS PHASE ===== -->
+    <section id="success" class="section section--success">
+      <div class="success-bg"></div>
+      <div class="blob blob--6"></div>
+      <div class="blob blob--7"></div>
+
+      <div class="section-header reveal-up">
+        <div class="chapter-tag chapter-tag--green">Chapter 5</div>
+        <h2 class="success-title">You Made It. 🚀</h2>
+        <p class="section-sub">The code is live. It works. Nobody knows how. Nobody asks questions.</p>
+      </div>
+
+      <div class="success-arena">
+        <!-- Achievement cards -->
+        <div class="achievements reveal-up">
+          <div class="achievement-card">
+            <div class="ach-icon">🏆</div>
+            <h4>First Deploy</h4>
+            <p>Shipped to prod without breaking everything</p>
+          </div>
+          <div class="achievement-card">
+            <div class="ach-icon">💡</div>
+            <h4>Rubber Duck</h4>
+            <p>Solved a bug by explaining it to a duck</p>
+          </div>
+          <div class="achievement-card">
+            <div class="ach-icon">🧠</div>
+            <h4>Stack Overflow</h4>
+            <p>Answered a question with 0 upvotes</p>
+          </div>
+          <div class="achievement-card">
+            <div class="ach-icon">☕</div>
+            <h4>Caffeine God</h4>
+            <p>Survived 48h on coffee alone</p>
+          </div>
+        </div>
+
+        <!-- Final dev card -->
+        <div class="dev-card glass-card reveal-up">
+          <div class="dev-card-glow"></div>
+          <div class="dev-avatar">
+            <div class="avatar-ring"></div>
+            <div class="avatar-inner">👨‍💻</div>
+          </div>
+          <h3>Senior Developer</h3>
+          <p class="dev-tagline">Turning caffeine into code since Day 1</p>
+          <div class="dev-skills-row">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">CSS Wizardry</span>
+            <span class="skill-tag">Google Fu</span>
+            <span class="skill-tag">Stack Overflow</span>
+          </div>
+          <div class="dev-final-progress">
+            <span>Developer Level</span>
+            <div class="dev-progress-bar">
+              <div class="dev-progress-fill success-fill" style="width:0%" id="successProgress"></div>
+            </div>
+            <span class="success-pct" id="successPct">0%</span>
+          </div>
+          <button class="btn btn--success" id="celebrateBtn">🎉 Celebrate!</button>
+        </div>
+      </div>
+
+      <!-- Confetti container -->
+      <div id="confettiContainer"></div>
+    </section>
+
+  </main>
+
+  <!-- ========== BUG FIX MODAL ========== -->
+  <div class="modal-overlay" id="bugModal">
+    <div class="modal-card glass-card">
+      <div class="modal-icon" id="modalIcon">🔧</div>
+      <h3 id="modalTitle">Fixing Bug...</h3>
+      <div class="modal-progress">
+        <div class="modal-bar" id="modalBar"></div>
+      </div>
+      <p id="modalMsg">Running diagnostics...</p>
+      <button class="btn btn--ghost" id="modalClose" style="display:none">Close</button>
+    </div>
+  </div>
+
+  <!-- ========== TOAST ========== -->
+  <div id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
